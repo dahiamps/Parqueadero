@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parqueadero</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form action="/saveparqueadero" method="POST">
+                <div class="row">
+                    <!-- <h1>fecha: <%= ingreso %> -->
+                    </h1>
+                    <% results.forEach((cupos)=> { %>
+                        <div class="col-3">
+                            <label for="cuposTotales" class="form-label">Cupos totales</label>
+                            <input type="text" name="cuposTotales	" id="cuposTotales	" class="form-control es my-3"
+                                value=" <%= cupos.cuposTotales%>" disabled>
+                        </div>
+                        <div class="col-3">
+                            <label for="cuposReservados" class="form-label">Cupos Disponibles</label>
+                            <input type="number" name="cuposDisponibles" id="cuposDisponibles"
+                                class="form-control es my-3" value="<%= cupos.cuposDisponibles%>">
+                        </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" name="Placa" id="Placa" class="form-control es my-3"
+                                placeholder="Ingresa placa">
+                            <label for="fechaIngreso"> Fecha de ingreso</label>
+                            <input type="text" name="fechaIngreso" id="fechaIngreso" class="form-control es my-3"
+                                value=" <%= ingreso %>" >
+                        </div>
+                        <div class="col-6">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <input type="submit" class="btn btn-success btnr" value="Guardar">
+                <% })%>
+
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
