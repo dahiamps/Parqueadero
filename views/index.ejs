@@ -18,7 +18,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#"><i class='bx bxs-car-garage'></i></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -65,8 +65,8 @@
                             class="form-control es my-3">
                         <input type="text" name="Color" id="Color" placeholder="Color Vehiculo"
                             class="form-control es my-3">
-                        <input type="text" name="cedula" id="cedula"
-                            placeholder="Cedula propietario" class="form-control es my-3">
+                        <input type="text" name="cedula" id="cedula" placeholder="Cedula propietario"
+                            class="form-control es my-3">
                         <input type="text" name="Mensualidad" id="Mensualidad" placeholder="Valor Mensualidad"
                             class="form-control es my-3">
 
@@ -103,7 +103,7 @@
                                     <th scope="col">Modelo</th>
                                     <th scope="col">Color</th>
                                     <th scope="col">Cedula Propietario</th>
-                                    <th scope="col">Mensualidad</th>
+
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -126,9 +126,7 @@
                                         <td>
                                             <%= cliente.cedulaPropietario %>
                                         </td>
-                                        <td>
-                                            <%= cliente.Mensualidad%>
-                                        </td>
+
                                         <td>
                                             <a href="#" class="btn btn-outline-info"><i class='bx bxs-edit-alt'></i></a>
                                             <a href="#" class="btn btn-outline-danger"><i class='bx bxs-trash'></i></a>

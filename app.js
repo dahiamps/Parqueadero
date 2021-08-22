@@ -39,7 +39,7 @@ const { render } = require('ejs');
 
 //9 - establecemos las rutas
 
-app.get(`/`, (req, res) => {
+app.get(`/vehiculos`, (req, res) => {
 
 
     connection.query('SELECT * FROM vehiculo', (error, results) => {
@@ -93,7 +93,7 @@ app.get(`/propietarios`, (req, res) => {
 })
 
 
-app.get(`/parqueados`, (req, res) => {
+app.get(`/`, (req, res) => {
 
 
     connection.query('SELECT * FROM vehiculoparqueadero', (error, results) => {
@@ -134,6 +134,8 @@ app.get('/edit/:Placa/:fechaIngreso', (req, res) => {
     // console.log(f);
     // console.log(ends);
 
+    
+//    console.log(hola);
 
     var Ingreso = new Date(f);
     var salida = new Date(horasalida);
@@ -153,12 +155,12 @@ app.get('/edit/:Placa/:fechaIngreso', (req, res) => {
     } else {
         var precio = number * 100;
     }
-    connection.query('SELECT * FROM vehiculoparqueadero  WHERE Placa=?', [Placa], (error, results) => {
+    connection.query('SELECT * FROM vehiculoparqueadero,parqueadero  WHERE Placa=?', [Placa], (error, results) => {
         if (error) {
             throw error
         } else {
             let hoy = moment();
-
+console.log(results);
             res.render('salida', {
                 vehiculo: results[0],
                 horasalida,
@@ -168,6 +170,7 @@ app.get('/edit/:Placa/:fechaIngreso', (req, res) => {
         }
     })
 })
+
 
 app.listen(3000, (req, res) => {
     console.log("Server running in http://localhost:3000");

@@ -1,0 +1,21 @@
+.card-header-second {
+    box-shadow: 1px 7px 15px #a2a2a2;
+    margin: -25px -25px 0px -25px;
+    height: 120px;
+    background: linear-gradient(-90deg, #8E2DE2, #4A00E0);
+}
+
+.card-header-second:hover {
+    box-shadow: 1px 7px 15px #a2a2a2;
+    margin: -25px -25px 0px -25px;
+    height: 120px;
+    background: linear-gradient(-90deg, #2fe447, #125217);
+}
+
+.card-section {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.card-section:hover {
+    box-shadow: 1px 1px 20px #d2d2d2
+}

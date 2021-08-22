@@ -8,9 +8,9 @@ exports.save = (req, res) => {
     const Modelo = req.body.Modelo;
     const Color = req.body.Color;
     const cedulaPropietario = req.body.cedula;
-    const Mensualidad = req.body.Mensualidad;
+    
     console.log(cedulaPropietario);
-    conexion.query('INSERT INTO vehiculo SET ?', { Placa: Placa, Marca: Marca, Modelo: Modelo, Color: Color, cedulaPropietario: cedulaPropietario, Mensualidad: Mensualidad }, (error, results) => {
+    conexion.query('INSERT INTO vehiculo SET ?', { Placa: Placa, Marca: Marca, Modelo: Modelo, Color: Color, cedulaPropietario: cedulaPropietario}, (error, results) => {
         if (error) {
             console.log(error);
         } else {

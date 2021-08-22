@@ -41,39 +41,65 @@
         </nav>
     </header>
     <main>
-     
+
+
         <% if (vehiculo) { %>
             <div class="container">
-                <form action="/saveparqueadero" method="POST">
 
+                <form action="/salida" method="POST">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="cuposTotales" class="form-label">Cupos totales</label>
+                            <input type="text" name="cuposTotales	" id="cuposTotales	" class="form-control es my-3"
+                                value=" <%= vehiculo.cuposTotales%>" disabled>
+                        </div>
+                        <div class="col-3">
+                            <label for="cuposReservados" class="form-label">Cupos Disponibles</label>
+                            <input type="hidden" name="cuposDisponibles" id="cuposDisponibles"
+                                class="form-control es my-3" value="<%= vehiculo.cuposDisponibles%>">
+                            <input type="number" class="form-control es my-3" value="<%= vehiculo.cuposDisponibles%>"
+                                disabled>
+                        </div>
+                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-6">
-                                <input type="text" name="Placa" id="Placa" class="form-control es my-3"
-                                    value="<%= vehiculo.Placa %>" disabled>
+                                <input type="hidden" name="Placa" id="Placa" class="form-control es my-3"
+                                    value="<%= vehiculo.Placa %>">
+                                <input type="text" class="form-control es my-3" value="<%= vehiculo.Placa %>" disabled>
                                 <label for="fechaIngreso"> Fecha de ingreso</label>
-                                <input type="text" name="fechaIngreso" id="fechaIngreso" class="form-control es my-3"
-                                    value="<%= vehiculo.fechaIngreso %>" disabled>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <label for="fechaIngreso"> Minutos parqueado</label>
-                                                <input type="text" name="minutos" id="minutos" class="form-control es my-3" value="<%= minutes %>" disabled>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="fechaIngreso"> Valor a pagar</label>
-                                                <input type="text" name="minutos" id="minutos" class="form-control es my-3" value="$ <%= precio %>" disabled>
-                                            </div>
+                                <input type="hidden" name="fechaIngreso" id="fechaIngreso" class="form-control es my-3"
+                                    value="<%= vehiculo.fechaIngreso %>">
+                                <input type="text" class="form-control es my-3" value="<%= vehiculo.fechaIngreso %>"
+                                    disabled>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="minutos"> Minutos parqueado</label>
+                                            <input type="hidden" name="minutos" id="minutos"
+                                                class="form-control es my-3" value="<%= minutes %>">
+                                            <input type="text" name="minutos" id="minutos" class="form-control es my-3"
+                                                value="<%= minutes %>" disabled>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="valor"> Valor a pagar</label>
+                                            <input type="hidden" name="valor" id="valor" class="form-control es my-3"
+                                                value="<%= precio %>">
+                                            <input type="text" class="form-control es my-3" value="<%= precio %>"
+                                                disabled>
                                         </div>
                                     </div>
-                                    
-                                    <label for="fechaIngreso"> Fecha de salida</label>
-                                    <input type="text" name="fechaIngreso" id="fechaIngreso" class="form-control es my-3"
-                                        value="<%= horasalida %>" disabled>
-                                
+                                </div>
+
+                                <label for="fechaSalida"> Fecha de salida</label>
+                                <input type="hidden" name="fechaSalida" id="fechaSalida" class="form-control es my-3"
+                                    value="<%= horasalida %>">
+                                <input type="text" class="form-control es my-3"
+                                    value="<%= horasalida %>" disabled>
                             </div>
                             <div class="col-6">
-                                <img src="https://www.nicepng.com/png/full/290-2904320_flota-de-autos-de-alquiler-alquiler-de-autos.png" alt="">
+                                <img src="https://www.nicepng.com/png/full/290-2904320_flota-de-autos-de-alquiler-alquiler-de-autos.png"
+                                    alt="">
                             </div>
                         </div>
                     </div>

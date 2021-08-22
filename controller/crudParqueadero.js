@@ -16,7 +16,7 @@ exports.saveParqueadero = (req, res) => {
         if (error) {
             console.log(error);
         } else {
-            res.redirect('/parqueados')
+            res.redirect('/')
         }
     })
 
