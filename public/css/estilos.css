@@ -1,8 +1,16 @@
 .card-header-second {
     box-shadow: 1px 7px 15px #a2a2a2;
     margin: -25px -25px 0px -25px;
-    height: 120px;
+    height: 60px;
     background: linear-gradient(-90deg, #8E2DE2, #4A00E0);
+}
+
+.card-header-circulo {
+    background: linear-gradient(-90deg, #8E2DE2, #4A00E0);
+}
+
+.card-header-circulo:hover {
+    background: linear-gradient(-90deg, #2fe447, #125217);
 }
 
 .card-header-second:hover {
@@ -19,3 +27,4 @@
 .card-section:hover {
     box-shadow: 1px 1px 20px #d2d2d2
 }
+

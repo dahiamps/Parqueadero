@@ -25,16 +25,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="/propietarios">Propietarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="/vehiculos">Vehiculos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="/Historial">Historial de salidas</a>
                         </li>
                     </ul>
                 </div>
@@ -44,21 +44,72 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-12"></div>
-                <div class="col-8 ">
+
+                <div class="col-md-3 col-12 justify-content-md-center">
+
+                    <center>
+                        <div class=" mb-4  my-3 mx-3 mb-3">
+                            <center>
+                                <h4>Cupos totales</h4>
+                            </center>
+
+                        </div>
+
+                        <div id="circulo" class=" col-4 rounded-circle card-header-circulo text-white">
+                            <br>
+                            <center>
+                                <h1>
+                                    <%= results[0].cuposTotales%>
+                                </h1>
+                            </center>
+
+                            <br>
+                        </div>
+                    </center>
+                    <hr>
+                    <center>
+                        <div class="mb-4  my-3 mx-3 mb-3">
+                            <center>
+                                <h4>Cupos disponibles</h4>
+                            </center>
+
+                        </div>
+                        <div id="circulo" class=" col-4 rounded-circle card-header-circulo text-white">
+                            <br>
+                            <center>
+                                <h1>
+                                    <%= results[0].cuposDisponibles%>
+                                </h1>
+                            </center>
+
+                            <br>
+                        </div>
+                    </center>
+
+                </div>
+
+                <div class="col-9 ">
 
 
                     <div class="row">
+                        <center>
+                            <h1 class="mx-5 mb-5">Vehiculos parqueados</h1>
+                        </center>
                         <% results.forEach((parqueados)=> { %>
+
+
                             <!--tarjeta 2-->
-                            <div class="col-lg-4 col-md-12 mb-4  my-3 mx-3 mb-3">
+                            <div class="col-lg-2 col-md-12   my-3 mx-3 ">
                                 <div class="card-section border rounded ml-4 mr-4">
                                     <div class="card-header card-header-second rounded ">
-                                        <br>
-                                        <h1 class="card-header-title mb-3 mt-1 text-white" >
-                                            <center><i class='bx bxs-car-garage'></i> <%= parqueados.Placa %></center>
-                                                    
-                                        </h1>
+                                        
+                                        <h3 class="card-header-title mb-3 mt-1 text-white">
+                                            <center><i class='bx bxs-car-garage'></i>
+                                                <%= parqueados.Placa %>
+                                            </center>
+
+                                        </h3>
+
                                     </div>
                                     <div class="card-body text-center">
                                         <h5>Ingreso:</h5>
@@ -66,7 +117,8 @@
                                             <br>
                                             <br>
                                             <a href="/edit/<%= parqueados.Placa %>/<%= parqueados.fechaIngreso %>"
-                                                class="btn btn-outline-dark"><i class='bx bxs-calculator bx-sm'></i></i></a>
+                                                class="btn btn-outline-dark"><i
+                                                    class='bx bxs-calculator bx-sm'></i></i></a>
                                     </div>
                                 </div>
                             </div>

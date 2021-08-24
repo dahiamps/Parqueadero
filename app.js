@@ -54,6 +54,21 @@ app.get(`/vehiculos`, (req, res) => {
         }
     })
 })
+app.get(`/historial`, (req, res) => {
+
+
+    connection.query('SELECT * FROM salidas', (error, results) => {
+
+        if (error) {
+            throw error
+        } else {
+            res.render('historial', {
+                results: results,
+
+            })
+        }
+    })
+})
 app.get(`/parqueadero`, (req, res) => {
 
 
@@ -96,7 +111,7 @@ app.get(`/propietarios`, (req, res) => {
 app.get(`/`, (req, res) => {
 
 
-    connection.query('SELECT * FROM vehiculoparqueadero', (error, results) => {
+    connection.query('SELECT * FROM vehiculoparqueadero,parqueadero', (error, results) => {
 
         if (error) {
             throw error
@@ -107,6 +122,7 @@ app.get(`/`, (req, res) => {
 
             res.render('vehiculosparqueados', {
                 results: results,
+                cupos: results
 
             })
         }
