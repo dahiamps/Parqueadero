@@ -18,7 +18,7 @@
     <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class='bx bxs-car-garage'></i></a>
+            <a class="navbar-brand" href="/"><i class='bx bxs-car-garage'></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -108,7 +108,7 @@
                                 value=" <%= cupos.cuposTotales%>" disabled>
                         </div>
                         <div class="col-3">
-<label for="cuposReservados" class="form-label">Cupos Disponibles</label>
+
 <input type="hidden" name="cuposDisponibles" id="cuposDisponibles" class="form-control es my-3"
     value="<%= cupos.cuposDisponibles%>">
 
@@ -133,7 +133,7 @@
 
                 <input type="submit" class="btn btn-success btnr" value="Guardar">
                 <% })%>
-
+                <a href="/parqueadero" class="btn btn-primary btnr">Cancelar</a>
             </form>
         </div>
     </main>

@@ -150,33 +150,33 @@ app.get('/edit/:Placa/:fechaIngreso', (req, res) => {
     // console.log(f);
     // console.log(ends);
 
-    
-//    console.log(hola);
+
+    //    console.log(hola);
 
     var Ingreso = new Date(f);
     var salida = new Date(horasalida);
     // var diff = Math.abs(new Date(fechaIngreso) - new Date(horasalida));
-    var diffMs = (Ingreso - salida)
+    // var diffMs = (Ingreso - salida)
     // var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-    var number = Math.abs(diffMs / (1000 * 60));
+    // var number = Math.abs(diffMs / (1000 * 60));
     //let dateOne = new Date("2020-07-10 12:53");
     //let dateTwo = new Date("2020-07-10 12:55");
 
     let msDifference = salida - Ingreso;
     let minutes = Math.floor(msDifference / 1000 / 60);
-    console.log("Minutes between two dates =", minutes);
-    console.log(number);
+    // console.log("Minutes between two dates =", minutes);
+    // console.log(number);
     if (minutes == 0) {
         var precio = 100;
     } else {
-        var precio = number * 100;
+        var precio = minutes * 100;
     }
     connection.query('SELECT * FROM vehiculoparqueadero,parqueadero  WHERE Placa=?', [Placa], (error, results) => {
         if (error) {
             throw error
         } else {
             let hoy = moment();
-console.log(results);
+            // console.log(results);
             res.render('salida', {
                 vehiculo: results[0],
                 horasalida,

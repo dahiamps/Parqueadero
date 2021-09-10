@@ -12,7 +12,7 @@ exports.salida = (req, res) => {
     let suma = cuposDisponibles;
     //console.log(parseInt(suma) + 1);
     let disp = parseInt(suma);
-    console.log(disp);
+    // console.log(disp);
     modify(disp)
     guardarSalida(Placa,fechaIngreso,minutos,valor,fechaSalida)
    
